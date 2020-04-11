@@ -10,7 +10,7 @@ public class Server {
 
     public static void main(String[] args) throws Exception {
     	int port = 9101;
-    	System.out.printf("Listening Go server on: %d\n", port); 
+    	System.out.printf("Listening Java server on: %d\n", port); 
         HttpServer server = HttpServer.create(new InetSocketAddress(port), 0);
         server.createContext("/", new MyHandler());
         server.setExecutor(null);

@@ -1,0 +1,59 @@
+version: '3'
+services:
+  go_app:
+    build: ./go
+    volumes:
+      - ./go:/usr/src/app
+    container_name: go_app
+    ports:
+      - "9100:9100"
+    networks:
+      - server
+  java_app:
+    build: ./java
+    volumes:
+      - ./java:/usr/src/app
+    container_name: java_app
+    ports:
+      - "9101:9101"
+    networks:
+      - server
+  nodejs_app:
+    build: ./nodejs
+    volumes:
+      - ./nodejs:/usr/src/app
+    container_name: nodejs_app
+    ports:
+      - "9102:9102"
+    networks:
+      - server
+  php_app:
+    build: ./php
+    volumes:
+      - ./php:/usr/src/app
+    container_name: php_app
+    ports:
+      - "9103:9103"
+    networks:
+      - server
+  python_app:
+    build: ./python
+    volumes:
+      - ./python:/usr/src/app
+    container_name: python_app
+    ports:
+      - "9104:9104"
+    networks:
+      - server
+  ruby_app:
+    build: ./ruby
+    volumes:
+      - ./ruby:/usr/src/app
+    container_name: ruby_app
+    ports:
+      - "9105:9105"
+    networks:
+      - server
+networks:
+  server:
+    driver: bridge
